@@ -1,0 +1,228 @@
+
+:root {
+  /* =========================================
+     Primary Brand Colors (Royal Blue)
+  ========================================= */
+  --color-primary-50: #eff6ff;   /* Light blue backgrounds (hover states, tags) */
+  --color-primary-100: #dbeafe;  /* Blue icon backgrounds */
+  --color-primary-400: #60a5fa;  /* Light blue text accents */
+  --color-primary-600: #2563eb;  /* Main Brand Color (Buttons, Links, Active states) */
+  --color-primary-700: #1d4ed8;  /* Darker blue for button hover states */
+
+  /* =========================================
+     Neutral Colors (Slate)
+  ========================================= */
+  --color-bg-main: #f8fafc;      /* slate-50: Main app background */
+  --color-bg-surface: #ffffff;   /* white: Cards, Navbar, Sections */
+  
+  --color-slate-100: #f1f5f9;    /* Light borders, subtle backgrounds */
+  --color-slate-200: #e2e8f0;    /* Standard borders, divider lines */
+  --color-slate-300: #cbd5e1;    /* Placeholder text */
+  --color-slate-400: #94a3b8;    /* Muted icons, empty states */
+  --color-slate-500: #64748b;    /* Secondary text, subheadings */
+  --color-slate-600: #475569;    /* Body text on light backgrounds */
+  --color-slate-700: #334155;    /* Emphasized body text */
+  --color-slate-800: #1e293b;    /* Admin sidebar borders/hover */
+  --color-slate-900: #0f172a;    /* Headings, Admin sidebar background */
+  --color-slate-950: #020617;    /* Admin sidebar header background */
+
+  /* =========================================
+     Accent Colors (Used in Stats & Explore)
+  ========================================= */
+  --color-accent-purple: #9333ea;  /* purple-600: UI/UX topics, Unique Visitors */
+  --color-accent-amber: #d97706;   /* amber-600: Performance topics, Avg Time */
+  --color-accent-emerald: #059669; /* emerald-600: Trending topics, Positive stats */
+  --color-accent-red: #ef4444;     /* red-500: Negative stats, Delete actions */
+}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    text-decoration: none; 
+    list-style: none; 
+}
+body {
+    line-height: 1.6; 
+    overflow-x: hidden; 
+    scroll-behavior: smooth; 
+    min-height: 100vh; 
+    background-color: var(--color-bg-main);
+}
+
+main{
+    margin: auto;
+    margin-top: 100px;
+    width: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.featured-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--color-bg-surface);
+    border-radius: 20px;
+    box-shadow: 0 0 20px 2px var(--color-slate-200);
+}
+.featured-card{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+}
+.content-side{
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 40%;
+}
+.image-side{
+    width: 50%;
+    height: 400px;
+}
+.featured-section img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 20px 20px 0;
+}
+.content-side .badge{
+
+    text-transform: uppercase;
+    font-size: 12px;
+    padding: 3px 10px;
+    font-weight: bold;
+    color: var(--color-primary-700);
+    background-color: var(--color-primary-100);
+    border-radius: 20px;
+    margin-bottom: 20px;
+    width: fit-content;
+    
+
+}
+.content-side p{
+    font-size: 15px;
+}
+
+.content-side h2,p{
+    margin-bottom: 20px;
+}
+.time-with-autor{
+    width: 50%;
+    font-size: 12px;
+    color: var(--color-slate-400);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.poinot{
+    width: 3px;
+    height: 3px;
+    background-color: var(--color-slate-400);
+    border-radius: 50%;
+}
+
+.read-article{
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--color-primary-600);
+    color: var(--color-slate-100);
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.read-article:hover{
+    background-color: var(--color-primary-700);
+}
+.read-article i{
+    font-size: 14px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 3fr 1fr; 
+    gap: 30px; 
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.post-card {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-5px); 
+}
+.articles-header {
+    
+    grid-column: 1 / -1; 
+    
+    display: flex;
+    justify-content: space-between; /* يضع العنوان في اليسار والرابط في اليمين */
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+.articles-header h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1a202c;
+}
+
+.view-all {
+    color: #3182ce;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+@media (max-width: 992px) {
+    .container {
+        grid-template-columns: 1fr; 
+    }
+    
+    .articles-grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 600px) {
+    .articles-grid {
+        grid-template-columns: 1fr; 
+    }
+}
