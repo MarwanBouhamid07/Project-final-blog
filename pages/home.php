@@ -36,24 +36,111 @@
             </article>
         </section>
         <div class="container">
+            <div class="section-header">
+                <h2>Latest Articles</h2>
+                <a href="#">View all <i class="fa-solid fa-angle-right"></i></a>
+            </div>
             <section class="articles-grid">
-                <div class="section-header">
-                    <h2>Latest Articles</h2>
-                    <a href="#">View all</a>
-                </div>
-
                 <div class="cards-container">
                     <article class="post-card">
                         <div class="post-image">
                             <span class="badge">DEVELOPMENT</span>
-                            <img src="path/to/image.jpg" alt="Coding background">
+                            <img src="../assets/uploads/a1.jpg" alt="Coding background">
                         </div>
                         <div class="post-content">
-                            <time>Mar 25, 2026</time>
+                            <time><i class="fa-regular fa-calendar"></i>Mar 25, 2026</time>
                             <h3>Modern State Management in React</h3>
                             <div class="author-info">
-                                <img src="avatar.jpg" alt="Sarah Jenkins">
-                                <span>Sarah Jenkins</span>
+                                <div class="name">
+                                    <div class="prfile">S</div>
+                                    <span>Sarah Jenkins</span>
+                                </div>
+                                <div class="icon-left"><i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="post-card">
+                        <div class="post-image">
+                            <span class="badge">DEVELOPMENT</span>
+                            <img src="../assets/uploads/a2.jfif" alt="Coding background">
+                        </div>
+                        <div class="post-content">
+                            <time><i class="fa-regular fa-calendar"></i>Mar 25, 2026</time>
+                            <h3>Modern State Management in React</h3>
+                            <div class="author-info">
+                                <div class="name">
+                                    <div class="prfile">S</div>
+                                    <span>Sarah Jenkins</span>
+                                </div>
+                                <div class="icon-left"><i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="post-card">
+                        <div class="post-image">
+                            <span class="badge">DEVELOPMENT</span>
+                            <img src="../assets/uploads/a3.jfif" alt="Coding background">
+                        </div>
+                        <div class="post-content">
+                            <time><i class="fa-regular fa-calendar"></i>Mar 25, 2026</time>
+                            <h3>Modern State Management in React</h3>
+                            <div class="author-info">
+                                <div class="name">
+                                    <div class="prfile">S</div>
+                                    <span>Sarah Jenkins</span>
+                                </div>
+                                <div class="icon-left"><i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="post-card">
+                        <div class="post-image">
+                            <span class="badge">DEVELOPMENT</span>
+                            <img src="../assets/uploads/a4.jpg" alt="Coding background">
+                        </div>
+                        <div class="post-content">
+                            <time><i class="fa-regular fa-calendar"></i>Mar 25, 2026</time>
+                            <h3>Modern State Management in React</h3>
+                            <div class="author-info">
+                                <div class="name">
+                                    <div class="prfile">S</div>
+                                    <span>Sarah Jenkins</span>
+                                </div>
+                                <div class="icon-left"><i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="post-card">
+                        <div class="post-image">
+                            <span class="badge">DEVELOPMENT</span>
+                            <img src="../assets/uploads/a5.jfif" alt="Coding background">
+                        </div>
+                        <div class="post-content">
+                            <time><i class="fa-regular fa-calendar"></i>Mar 25, 2026</time>
+                            <h3>Modern State Management in React</h3>
+                            <div class="author-info">
+                                <div class="name">
+                                    <div class="prfile">S</div>
+                                    <span>Sarah Jenkins</span>
+                                </div>
+                                <div class="icon-left"><i class="fa-solid fa-arrow-right"></i></div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="post-card">
+                        <div class="post-image">
+                            <span class="badge">DEVELOPMENT</span>
+                            <img src="../assets/uploads/a6.webp" alt="Coding background">
+                        </div>
+                        <div class="post-content">
+                            <time><i class="fa-regular fa-calendar"></i>Mar 25, 2026</time>
+                            <h3>Modern State Management in React</h3>
+                            <div class="author-info">
+                                <div class="name">
+                                    <div class="prfile">S</div>
+                                    <span>Sarah Jenkins</span>
+                                </div>
+                                <div class="icon-left"><i class="fa-solid fa-arrow-right"></i></div>
                             </div>
                         </div>
                     </article>
