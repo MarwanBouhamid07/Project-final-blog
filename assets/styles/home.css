@@ -394,6 +394,61 @@ article{
     color: var(--color-primary-100);
 
 }
+
+.categories-wedget h3 i{
+    color: var(--color-slate-400);
+    transition: 0.3s;
+
+}
+.categorie{
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.group-icon-nameCategorie{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 14px; */
+}
+.group-icon-nameCategorie p{
+    transition: 0.3s;
+    font-size: 13px;
+    margin: 0;
+    margin-left: 10px;
+}
+.group-icon-nameCategorie i{
+    transition: 0.3s;
+    font-size: 12px;
+    color: var(--color-slate-300);
+}
+.categories-wedget span{
+    transition: 0.3s;
+    font-size: 12px;
+    width: 25px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-slate-100);
+    border-radius: 10px;
+    padding:0 ;
+    color: var(--color-slate-600);
+    margin: 0;
+}
+.categorie:hover i{
+    color: var(--color-primary-700);
+}
+.categorie:hover p{
+color: var(--color-primary-700);
+}
+.categorie:hover span{
+background-color: var(--color-primary-100);
+color: var(--color-primary-700);
+}
 @media (max-width:2136px) {
        main{
         width: 90%;

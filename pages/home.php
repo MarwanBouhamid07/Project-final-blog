@@ -180,6 +180,40 @@
                     </div>
                 </div>
             </div>
+
+            <div class="widget categories-wedget">
+                <h3> <i class="fa-regular fa-folder"></i> Categories</h3>
+                <div class="categoreis">
+                    <div class="categorie">
+                        <div class="group-icon-nameCategorie">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <p>Developement</p>
+                        </div>
+                        <span class="number-of-articles-inCategorie">19</span>
+                    </div>
+                    <div class="categorie">
+                        <div class="group-icon-nameCategorie">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <p>Developement</p>
+                        </div>
+                        <span class="number-of-articles-inCategorie">19</span>
+                    </div>
+                    <div class="categorie">
+                        <div class="group-icon-nameCategorie">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <p>Developement</p>
+                        </div>
+                        <span class="number-of-articles-inCategorie">19</span>
+                    </div>
+                    <div class="categorie">
+                        <div class="group-icon-nameCategorie">
+                            <i class="fa-solid fa-angle-right"></i>
+                            <p>Developement</p>
+                        </div>
+                        <span class="number-of-articles-inCategorie">19</span>
+                    </div>
+                </div>
+            </div>
         </aside>
         </div>
     </main>
