@@ -149,12 +149,36 @@
 
         <aside class="sidebar">
             <div class="widget search-widget">
-                <h3>Search</h3>
+                <h3><i class="fa-brands fa-sistrix"></i> Search</h3>
                 <input type="text" placeholder="Search articles...">
+                <span><i class="fa-brands fa-sistrix"></i></span>
             </div>
 
             <div class="widget trending-widget">
-                <h3>Trending Posts</h3>
+                <h3><i class="fa-solid fa-arrow-trend-up"></i> Trending Posts</h3>
+                <div class="content-trending-posts">
+                    <div class="trend-post">
+                        <div class="number">01</div>
+                        <div class="title-date-trend-post">
+                            <h5 class="trend-post-title">Modern State Management in React</h4>
+                            <div class="date-trend-post">Mar 25,2026</div>
+                        </div>
+                    </div>
+                    <div class="trend-post">
+                        <div class="number">02</div>
+                        <div class="title-date-trend-post">
+                            <h5 class="trend-pos-title">Modern State Management in React</h4>
+                            <div class="date-trend-post">Mar 25,2026</div>
+                        </div>
+                    </div>
+                    <div class="trend-post">
+                        <div class="number">03</div>
+                        <div class="title-date-trend-post">
+                            <h5 class="trend-post-title">Modern State Management in React</h4>
+                            <div class="date-trend-post">Mar 25,2026</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </aside>
         </div>
