@@ -3,6 +3,8 @@ require_once "../includes/function-articles.php";
 $articles =getArticlesHome();
 
 $categories = categoriesCount();
+
+$todayPost = todayPost();
 ?>
 
 <!DOCTYPE html>
@@ -27,14 +29,14 @@ $categories = categoriesCount();
             <article class="featured-card">
                 <div class="content-side">
                     <span class="badge">Featured Post</span>
-                    <h2>Building the Next Generation of Web Applications</h2>
-                    <p>Explore advanced techniques, modern frameworks, and architectural patterns to create highly performant and scalable user interfaces.</p>
+                    <h2><?php echo htmlspecialchars($todayPost['title']);?></h2>
+                    <p><?php echo htmlspecialchars($todayPost['excerpt']);?></p>
                     <div class="time-with-autor">
                         <div class="time"><i class="fa-regular fa-calendar"></i> Today</div>
                         <span class="poinot"></span>
-                        <div class="author"><i class="fa-regular fa-user"></i> Alex Rivera</div>
+                        <div class="author"><i class="fa-regular fa-user"></i> <?php echo htmlspecialchars($todayPost['author_name']);?></div>
                     </div>
-                    <button class="read-article">Read Article <i class="fa-solid fa-arrow-right"></i></button>
+                    <button  class="read-article">Read Article <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
 
                 <div class="image-side">

@@ -250,7 +250,6 @@ time{
 .name{
     display: flex;
     width: 65%;
-    justify-content: space-between;
     align-items: center;
     font-weight: 600;
 }
@@ -265,6 +264,9 @@ time{
     cursor: pointer;
     transition: 0.3s;
     background-color: var(--color-slate-100);
+}
+.prfile{
+    margin-right: 10px;
 }
 .section-header a{
     color: var(--color-primary-700);
