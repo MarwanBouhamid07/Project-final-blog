@@ -217,7 +217,7 @@
         </aside>
         </div>
     </main>
-
+    <?php include "../includes/footer.php"?>
     <script src="../assets/scripts/script.js"></script>
 </body>
 
