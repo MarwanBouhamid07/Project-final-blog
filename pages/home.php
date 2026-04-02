@@ -1,3 +1,10 @@
+<?php
+require_once "../includes/function-articles.php";
+$articles =getArticlesHome();
+
+$categories = categoriesCount();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,109 +49,37 @@
             </div>
             <section class="articles-grid">
                 <div class="cards-container">
-                    <article class="post-card">
-                        <div class="post-image">
-                            <span class="badge">DEVELOPMENT</span>
-                            <img src="../assets/uploads/a1.jpg" alt="Coding background">
-                        </div>
-                        <div class="post-content">
-                            <time><i class="fa-regular fa-calendar"></i>Mar 25, 2026</time>
-                            <h3>Modern State Management in React</h3>
-                            <div class="author-info">
-                                <div class="name">
-                                    <div class="prfile">S</div>
-                                    <span>Sarah Jenkins</span>
-                                </div>
-                                <div class="icon-left"><i class="fa-solid fa-arrow-right"></i></div>
+        <?php if (empty($articles)): ?>
+            <p>No articles found.</p>
+        <?php else: ?>
+            <?php foreach ($articles as $article): ?>
+                <article class="post-card">
+                    <div class="post-image">
+                        <span class="badge"><?php echo htmlspecialchars($article['category_name'] ?? 'General'); ?></span>
+                        <img src="<?php echo htmlspecialchars($article['featured_image_url']); ?>" alt="<?php echo htmlspecialchars($article['title']); ?>">
+                    </div>
+                    
+                    <div class="post-content">
+                        <time><i class="fa-regular fa-calendar"></i> <?php echo date('M d, Y', strtotime($article['created_at'])); ?></time>
+                        
+                        <h3><?php echo htmlspecialchars($article['title']); ?></h3>
+                        
+                        <div class="author-info">
+                            <div class="name">
+                                <div class="prfile"><?php echo strtoupper(substr($article['author_name'], 0, 1)); ?></div>
+                                <span><?php echo htmlspecialchars($article['author_name']); ?></span>
+                            </div>
+                            <div class="icon-left">
+                                <a href="article.php?slug=<?php echo $article['slug']; ?>">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
                             </div>
                         </div>
-                    </article>
-                    <article class="post-card">
-                        <div class="post-image">
-                            <span class="badge">DEVELOPMENT</span>
-                            <img src="../assets/uploads/a2.jfif" alt="Coding background">
-                        </div>
-                        <div class="post-content">
-                            <time><i class="fa-regular fa-calendar"></i>Mar 25, 2026</time>
-                            <h3>Modern State Management in React</h3>
-                            <div class="author-info">
-                                <div class="name">
-                                    <div class="prfile">S</div>
-                                    <span>Sarah Jenkins</span>
-                                </div>
-                                <div class="icon-left"><i class="fa-solid fa-arrow-right"></i></div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="post-card">
-                        <div class="post-image">
-                            <span class="badge">DEVELOPMENT</span>
-                            <img src="../assets/uploads/a3.jfif" alt="Coding background">
-                        </div>
-                        <div class="post-content">
-                            <time><i class="fa-regular fa-calendar"></i>Mar 25, 2026</time>
-                            <h3>Modern State Management in React</h3>
-                            <div class="author-info">
-                                <div class="name">
-                                    <div class="prfile">S</div>
-                                    <span>Sarah Jenkins</span>
-                                </div>
-                                <div class="icon-left"><i class="fa-solid fa-arrow-right"></i></div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="post-card">
-                        <div class="post-image">
-                            <span class="badge">DEVELOPMENT</span>
-                            <img src="../assets/uploads/a4.jpg" alt="Coding background">
-                        </div>
-                        <div class="post-content">
-                            <time><i class="fa-regular fa-calendar"></i>Mar 25, 2026</time>
-                            <h3>Modern State Management in React</h3>
-                            <div class="author-info">
-                                <div class="name">
-                                    <div class="prfile">S</div>
-                                    <span>Sarah Jenkins</span>
-                                </div>
-                                <div class="icon-left"><i class="fa-solid fa-arrow-right"></i></div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="post-card">
-                        <div class="post-image">
-                            <span class="badge">DEVELOPMENT</span>
-                            <img src="../assets/uploads/a5.jfif" alt="Coding background">
-                        </div>
-                        <div class="post-content">
-                            <time><i class="fa-regular fa-calendar"></i>Mar 25, 2026</time>
-                            <h3>Modern State Management in React</h3>
-                            <div class="author-info">
-                                <div class="name">
-                                    <div class="prfile">S</div>
-                                    <span>Sarah Jenkins</span>
-                                </div>
-                                <div class="icon-left"><i class="fa-solid fa-arrow-right"></i></div>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="post-card">
-                        <div class="post-image">
-                            <span class="badge">DEVELOPMENT</span>
-                            <img src="../assets/uploads/a6.webp" alt="Coding background">
-                        </div>
-                        <div class="post-content">
-                            <time><i class="fa-regular fa-calendar"></i>Mar 25, 2026</time>
-                            <h3>Modern State Management in React</h3>
-                            <div class="author-info">
-                                <div class="name">
-                                    <div class="prfile">S</div>
-                                    <span>Sarah Jenkins</span>
-                                </div>
-                                <div class="icon-left"><i class="fa-solid fa-arrow-right"></i></div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
+                    </div>
+                </article>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
             </section>
 
         <aside class="sidebar">
@@ -184,34 +119,17 @@
             <div class="widget categories-wedget">
                 <h3> <i class="fa-regular fa-folder"></i> Categories</h3>
                 <div class="categoreis">
+                    <?php foreach ($categories as $cat): ?>
                     <div class="categorie">
                         <div class="group-icon-nameCategorie">
                             <i class="fa-solid fa-angle-right"></i>
-                            <p>Developement</p>
+                            <p>
+                            <?php echo htmlspecialchars($cat['name']); ?>
+                    </p>
                         </div>
-                        <span class="number-of-articles-inCategorie">19</span>
+                        <span class="number-of-articles-inCategorie"><?php echo $cat['count']; ?></span>
                     </div>
-                    <div class="categorie">
-                        <div class="group-icon-nameCategorie">
-                            <i class="fa-solid fa-angle-right"></i>
-                            <p>Developement</p>
-                        </div>
-                        <span class="number-of-articles-inCategorie">19</span>
-                    </div>
-                    <div class="categorie">
-                        <div class="group-icon-nameCategorie">
-                            <i class="fa-solid fa-angle-right"></i>
-                            <p>Developement</p>
-                        </div>
-                        <span class="number-of-articles-inCategorie">19</span>
-                    </div>
-                    <div class="categorie">
-                        <div class="group-icon-nameCategorie">
-                            <i class="fa-solid fa-angle-right"></i>
-                            <p>Developement</p>
-                        </div>
-                        <span class="number-of-articles-inCategorie">19</span>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </aside>
