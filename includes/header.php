@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
     <header>
         <div class="group-style">
         <div class="group-LNM-L">
@@ -13,8 +15,17 @@
             </nav>
         </div>
         <div class="buttons-header">
+            <div class="profile-head">
+                <div class="profile-user"><i class="fa-regular fa-user"></i></div>
+                <div class="group-profile">
+                    <div class="username"><?php echo $_SESSION['user'];?></div>
+                    <div class="role"><?php echo $_SESSION['role'];?></div>
+                </div>
+            </div>
             <a href="login.php">Login in</a>
+            <?php if($_SESSION['role'] == 'admin'):?>
             <div class="admin-button">Admin</div>
+            <?php endif;?>
             <div class="explore">Explore</div>
         </div>
         </div>

@@ -1,5 +1,7 @@
 <?php
 require_once "../includes/function-articles.php";
+session_start();
+check_login();
 $articles =getArticlesHome();
 
 $categories = categoriesCount();

@@ -121,7 +121,7 @@ header nav a:hover{
     justify-content: center;
     align-items: center;
     font-size:13px ;
-    font-weight: bold;
+    font-weight: 600;
     
 }
 .buttons-header a{
@@ -157,6 +157,30 @@ header nav a:hover{
 .explore:hover{
     transform: translateY(-3px);
     background-color: var(--color-primary-700);
+}
+.profile-head{
+    border-right: 1px solid var(--color-slate-300);
+    padding-right: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.profile-head .profile-user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+width: 35px;
+margin-right: 5px;
+height: 35px;
+border-radius: 50%;
+background-color: var(--color-slate-100);
+color: var(--color-slate-400);
+border: 1px solid var(--color-slate-200);
+
+}
+.role{
+    color: var(--color-primary-600);
 }
 @media (max-width:2136px) {
     main{

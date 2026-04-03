@@ -45,6 +45,12 @@ function todayPost(){
     $latest_article = $stmt->fetch(PDO::FETCH_ASSOC);
     return $latest_article;
 }
+function check_login() {
+    if (!isset($_SESSION['user_id'])) {
+        header("Location: ../pages/login.php");
+        exit();
+    }
+}
 
 
 

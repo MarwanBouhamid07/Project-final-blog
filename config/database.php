@@ -4,14 +4,15 @@ class Database{
     private $host='localhost';
     private $dbname = 'devspace';
     private $username = 'root';
-    private $password  = '';
+    private $password  = '123456';
+    private $port  = '';
 
     public $conn;
 
     
     public function getconnection(){
         $this->conn = null;
-        $dsn="mysql:host={$this->host};dbname={$this->dbname};" ;
+        $dsn="mysql:host={$this->host};port={$this->port};dbname={$this->dbname};" ;
 
         try{
             $this->conn = new PDO($dsn,$this->username,$this->password);

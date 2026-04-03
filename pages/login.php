@@ -1,3 +1,7 @@
+<?php
+require_once "../config/database.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +12,14 @@
     <script src="https://kit.fontawesome.com/8f8b4a4f39.js" crossorigin="anonymous"></script>
 </head>
 <body>
+        <?php if (isset($_SESSION['error'])): ?>
+        <div class="error" style="color: red; text-align: center;">
+            <?php 
+                echo $_SESSION['error']; 
+                unset($_SESSION['error']);
+            ?>
+        </div>
+        <?php endif; ?>
     <section class= "card-login">
         <div class="welcome">
             <h1>Welcome back to Project Insight</h1>
@@ -19,7 +31,7 @@
                 <h2>Sign in to your account</h2>
                 <p>Enter your details to access your dashboard.</p>
             </div>
-                <form action="auth-login" method="post">
+                <form action="../actions/auth-login.php" method="post">
                     <div class="group group-email">
                         <label for="email">Email</label>
                         <span class="pass-icon"><i class="fa-regular fa-envelope"></i></span>
@@ -28,7 +40,7 @@
                     <div class=" group group-pass">
                         <label for="pass">Password</label>
                         <span class="pass-icon"><i class="fa-solid fa-lock"></i></span>
-                        <input type="pass" placeholder="........" id="pass" name="password" required>
+                        <input type="password" placeholder="........" id="pass" name="password" required>
                     </div>
                     <button type="submit">Sign in <i class="fa-solid fa-arrow-right"></i></button>
                 </form>
