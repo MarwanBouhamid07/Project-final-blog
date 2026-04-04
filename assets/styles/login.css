@@ -68,6 +68,9 @@ body {
     margin-bottom: 30px;
 
 }
+.loginform{
+    width: 80%;
+}
 .siginTitle{
     margin-bottom: 40px;
 }
@@ -76,11 +79,11 @@ body {
     height: 600px;
     box-shadow: 0 0 20px 2px var(--color-slate-200);
     background-color: var(--color-bg-surface);
-    background-repeat: no-repeat;
     border-radius: 15px;
     display: flex;
 }
 .welcome{
+    background-repeat: no-repeat;
     background-image: url('../uploads/bglogin.jpg');
     color: var(--color-primary-50);
     border-radius: 15px 0 0 15px;
