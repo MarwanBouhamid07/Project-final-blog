@@ -1,5 +1,7 @@
 <?php
 require_once "../config/database.php";
+require_once "../includes/function-articles.php";
+// check_login();
 session_start();
 ?>
 <!DOCTYPE html>

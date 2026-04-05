@@ -30,7 +30,7 @@ session_start();
                 <h2>Create an account</h2>
                 <p>Sign up to get started with Project Insight.</p>
             </div>
-            <form action="../actions/auth-login.php" method="post">
+            <form action="../actions/auth-sigin.php" method="post">
                 <div class="group group-username">
                     <label for="username">Username</label>
                     <span class="pass-icon"><i class="fa-regular fa-envelope"></i></span>
