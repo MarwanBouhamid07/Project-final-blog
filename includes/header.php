@@ -10,8 +10,8 @@ session_start();
             </div>
             <nav>
                 <a href="home.php">Home</a>
-                <a href="">Article</a>
-                <a href="">Showcase</a>
+                <a href="articles.php">Article</a>
+                <a href="">About us</a>
             </nav>
         </div>
         <div class="buttons-header">
@@ -23,8 +23,8 @@ session_start();
                 </div>
             </div>
             <a href="login.php">Login in</a>
-            <?php if($_SESSION['role'] == 'admin'):?>
-            <div class="admin-button">Admin</div>
+            <?php if($_SESSION['role'] == 'admin' || $_SESSION['role'] == 'author' ):?>
+            <div class="admin-button" id="admin-page">Admin</div>
             <?php endif;?>
             <div class="explore">Explore</div>
         </div>

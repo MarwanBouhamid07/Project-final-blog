@@ -2,7 +2,9 @@
 require_once "../config/database.php";
 require_once "../includes/function-articles.php";
 // check_login();
-session_start();
+if(session_status() === PHP_SESSION_NONE){
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

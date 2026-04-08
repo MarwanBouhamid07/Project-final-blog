@@ -1,20 +1,26 @@
 <?php
 require_once "../config/database.php";
 
-function getArticlesHome(){
+function getArticlesHome($page = 1, $limit = 6,$sort = 'newset') {
     $db = new Database();
-    $conn =$db->getconnection();
-    
+    $conn = $db->getconnection();
+    $direction = ($sort === 'oldest') ? 'ASC' : 'DESC';
+    $offset = ($page - 1) * $limit;
+
     $query = "SELECT a.*, c.name as category_name, u.username as author_name 
               FROM articles a 
               LEFT JOIN categories c ON a.category_id = c.id 
               LEFT JOIN users u ON a.author_id = u.id 
               WHERE a.status = 'published' 
-              ORDER BY a.created_at DESC LIMIT 6";
+              ORDER BY a.created_at $direction 
+              LIMIT :limit OFFSET :offset"/*offset tell to sql how many rows to skip*/;
     
-    $stmt = $conn->query($query);
-    $articles =$stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $articles;
+    $stmt = $conn->prepare($query);
+    $stmt->bindValue(':limit', (int) $limit, PDO::PARAM_INT);
+    $stmt->bindValue(':offset', (int) $offset/*convert it to integer*/, PDO::PARAM_INT/* tells to pdo this is  interger number*/);
+    
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 function categoriesCount(){
