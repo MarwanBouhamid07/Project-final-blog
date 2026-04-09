@@ -1,6 +1,8 @@
 <?php
 require_once "../includes/function-articles.php";
-session_start();
+if(session_status() === PHP_SESSION_NONE){
+    session_start();
+}
 check_login();
 $articles =getArticlesHome();
 
@@ -15,7 +17,7 @@ $todayPost = todayPost();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
     <link rel="stylesheet" href="../assets/styles/header.css">
     <link rel="stylesheet" href="../assets/styles/home.css">
     <script src="https://kit.fontawesome.com/8f8b4a4f39.js" crossorigin="anonymous"></script>
@@ -49,7 +51,7 @@ $todayPost = todayPost();
         <div class="container">
             <div class="section-header">
                 <h2>Latest Articles</h2>
-                <a href="#">View all <i class="fa-solid fa-angle-right"></i></a>
+                <a href="articles.php">View all <i class="fa-solid fa-angle-right"></i></a>
             </div>
             <section class="articles-grid">
                 <div class="cards-container">
