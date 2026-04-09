@@ -127,40 +127,40 @@ $articles = getArticlesHome($currentPage, 4, $sort);
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-                    const pageNumbers = document.querySelectorAll('.page-number');
-                    const nextArrow = document.querySelector('.arrow.next');
-                    `   
-        const prevArrow = document.querySelector('.arrow.prev');
-    
-    pageNumbers.forEach(number => {
-        number.addEventListener('click', (e) => {
-            const currentActive = document.querySelector('.page-number.active');
-            if (currentActive) {
-                currentActive.classList.remove('active');
+            const pageNumbers = document.querySelectorAll('.page-number');
+            const nextArrow = document.querySelector('.arrow.next');
+
+            const prevArrow = document.querySelector('.arrow.prev');
+
+            pageNumbers.forEach(number => {
+                number.addEventListener('click', (e) => {
+                    const currentActive = document.querySelector('.page-number.active');
+                    if (currentActive) {
+                        currentActive.classList.remove('active');
+                    }
+
+                    // Add 'active' class to the clicked element
+                    number.classList.add('active');
+
+                    // Log the current page for debugging purposes
+                    console.log("Loading data for page: " + number.innerText);
+
+                    // Optional: Call updateArrows function to handle button states
+                    updateArrows(number.innerText);
+                });
+            });
+
+
+
+            function updateArrows(page) {
+                // Disable previous arrow if on the first page
+                if (page === "1") {
+                    prevArrow.classList.add('disabled');
+                } else {
+                    prevArrow.classList.remove('disabled');
+                }
             }
-
-            // Add 'active' class to the clicked element
-            number.classList.add('active');
-
-            // Log the current page for debugging purposes
-            console.log("Loading data for page: " + number.innerText);
-            
-            // Optional: Call updateArrows function to handle button states
-            updateArrows(number.innerText);
         });
-    });
-
-
-    
-    function updateArrows(page) {
-        // Disable previous arrow if on the first page
-        if (page === "1") {
-            prevArrow.classList.add('disabled');
-        } else {
-            prevArrow.classList.remove('disabled');
-        }
-    }
-});
     </script>
 </body>
 
