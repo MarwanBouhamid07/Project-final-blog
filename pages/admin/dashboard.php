@@ -25,6 +25,11 @@ $sort = $_GET['sort'] ?? 'newset';
 
 $articles = getArticlesHome($currentPage, 5, $sort);
 ?>
+
+// require_once "../../includes/function-articles.php";
+// check_login();
+session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,6 +119,7 @@ $articles = getArticlesHome($currentPage, 5, $sort);
                 </tr>
             </thead>
             <tbody>
+<<<<<<< HEAD
                 <?php if (empty($articles)): ?>
             <p>No articles found.</p>
         <?php else: ?>
@@ -131,12 +137,38 @@ $articles = getArticlesHome($currentPage, 5, $sort);
                 </tr>
                 <?php endforeach;?>
                 <?php endif;?>
+=======
+                <tr>
+                    <td class="article-title">Modern State Management in React</td>
+                    <td><span class="cat-badge">Development</span></td>
+                    <td class="views-cell"><i class="fa-regular fa-eye"></i> 1.2K</td>
+                    <td><span class="status-badge status-published">Published</span></td>
+                    <td>Mar 25, 2026</td>
+                    <td class="actions">
+                        <button class="btn-edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button class="btn-delete"><i class="fa-regular fa-trash-can"></i></button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="article-title">Optimizing AI Models for Mobile</td>
+                    <td><span class="cat-badge">Machine Learning</span></td>
+                    <td class="views-cell"><i class="fa-regular fa-eye"></i> 2.4K</td>
+                    <td><span class="status-badge status-draft">Draft</span></td>
+                    <td>Mar 18, 2026</td>
+                    <td class="actions">
+                        <button class="btn-edit"><i class="fa-regular fa-pen-to-square"></i></button>
+                        <button class="btn-delete"><i class="fa-regular fa-trash-can"></i></button>
+                    </td>
+                </tr>
+>>>>>>> 2f10310ca8d4dd42665d91ddcb2bbfa3e3081bd1
             </tbody>
         </table>
     </div>
 
     <div class="table-footer">
         <p>Showing 1 to 5 of 128 entries</p>
+<<<<<<< HEAD
 <div class="footer-btns">
     <a href="dashboard.php?page=<?php echo $currentPage - 1; ?>" class="btn-nav">Previous</a>
     <a href="dashboard.php?page=<?php echo $currentPage + 1; ?>" class="btn-nav">Next</a>
@@ -146,5 +178,14 @@ $articles = getArticlesHome($currentPage, 5, $sort);
     </main>
 
     
+=======
+        <div class="footer-btns">
+            <button class="btn-nav">Previous</button>
+            <button class="btn-nav">Next</button>
+        </div>
+    </div>
+</section>
+    </main>
+>>>>>>> 2f10310ca8d4dd42665d91ddcb2bbfa3e3081bd1
 </body>
 </html>
