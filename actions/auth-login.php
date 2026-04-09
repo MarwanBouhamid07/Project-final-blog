@@ -28,6 +28,7 @@ $user = $stmt->fetch();
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user'] = $user['username'];
             $_SESSION['role'] = $user['role'];
+            setcookie("user_id", $user['id'], time() + 3600, "/");
                         
             header("Location: ../pages/home.php");
             exit();
