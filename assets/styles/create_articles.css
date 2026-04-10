@@ -189,3 +189,9 @@ body {
     background: #f8fafc;
     outline: none;
 }
+
+.settings-card { background: white; padding: 20px; border-radius: 15px; border: 1px solid #f1f5f9; margin-bottom: 20px; }
+.upload-box { border: 2px dashed #e2e8f0; border-radius: 12px; padding: 30px; text-align: center; cursor: pointer; }
+.upload-box i { font-size: 30px; color: #cbd5e1; }
+.input-group label { display: block; font-size: 11px; font-weight: 700; margin: 15px 0 5px; color: #64748b; }
+.input-group select, .input-group input { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #e2e8f0; background: #f8fafc; }
