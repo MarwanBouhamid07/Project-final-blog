@@ -4,7 +4,7 @@ class Database{
     private $host='localhost';
     private $dbname = 'devspace';
     private $username = 'root';
-    private $password  = '123456';
+    private $password  = '';
     private $port  = '';
 
     public $conn;

@@ -1,3 +1,8 @@
+<?php 
+// Get the current file name (e.g., dashboard.php)
+$current_page = basename($_SERVER['SCRIPT_NAME']);
+?>
+
 <aside class="sidebar">
     <div class="sidebar-brand">
         <div class="logo-box">PI</div>
@@ -22,31 +27,34 @@
 
     <nav class="sidebar-menu">
         <ul>
-            <li class="active">
-                <a href="dashboard.php">
-                    <i class="fa-solid fa-table-columns"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-            <li>
-                <a href="new-post.php">
-                    <i class="fa-regular fa-file-lines"></i>
-                    <span>New Post</span>
-                </a>
-            </li>
-            <li>
-                <a href="statistics.php">
-                    <i class="fa-solid fa-chart-simple"></i>
-                    <span>Statistics</span>
-                </a>
-            </li>
-            <li>
-                <a href="settings.php">
-                    <i class="fa-solid fa-gear"></i>
-                    <span>Settings</span>
-                </a>
-            </li>
-        </ul>
+        <li class="<?php echo ($current_page == 'dashboard.php') ? 'active' : ''; ?>">
+            <a href="dashboard.php">
+                <i class="fa-solid fa-table-columns"></i>
+                <span>Dashboard</span>
+            </a>
+        </li>
+
+        <li class="<?php echo ($current_page == 'create_articles.php') ? 'active' : ''; ?>">
+            <a href="create_articles.php">
+                <i class="fa-regular fa-file-lines"></i>
+                <span>New Post</span>
+            </a>
+        </li>
+
+        <li class="<?php echo ($current_page == 'statistics.php') ? 'active' : ''; ?>">
+            <a href="statistics.php">
+                <i class="fa-solid fa-chart-simple"></i>
+                <span>Statistics</span>
+            </a>
+        </li>
+
+        <li class="<?php echo ($current_page == 'settings.php') ? 'active' : ''; ?>">
+            <a href="settings.php">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+        </li>
+    </ul>
     </nav>
 
     <div class="sidebar-footer">
