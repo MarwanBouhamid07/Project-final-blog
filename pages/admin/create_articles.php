@@ -29,7 +29,6 @@ $categories = categoriesCount();
                         <p>Write, format, and publish your content.</p>
                     </div>
                     <div class="header-actions">
-                        <button class="btn-preview"><i class="fa-regular fa-eye"></i> Preview</button>
                         <button type="submit" name="submit_post" class="btn-publish"><i class="fa-solid fa-upload"></i>
                             Publish Post</button>
                     </div>
