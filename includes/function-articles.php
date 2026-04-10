@@ -38,7 +38,7 @@ function categoriesCount()
 {
     $db = new Database();
     $conn = $db->getconnection();
-    $cat_query = "SELECT c.name, COUNT(a.id) as count 
+    $cat_query = "SELECT c.id , c.name, COUNT(a.id) as count 
               FROM categories c 
               LEFT JOIN articles a ON c.id = a.category_id 
               GROUP BY c.id";

@@ -80,7 +80,7 @@ $articles = getArticlesHome($currentPage, 4, $sort);
                                 <div class="post-content">
                                     <time><i class="fa-regular fa-calendar"></i> <?php echo date('M d, Y', strtotime($article['created_at'])); ?></time>
 
-                                    <h3><?php echo htmlspecialchars($article['title']); ?></h3>
+                                    <h3 class="card-title"> <?php echo htmlspecialchars($article['title']); ?></h3>
 
                                     <div class="author-info">
                                         <div class="name">
@@ -88,7 +88,7 @@ $articles = getArticlesHome($currentPage, 4, $sort);
                                             <span><?php echo htmlspecialchars($article['author_name']); ?></span>
                                         </div>
                                         <div class="icon-left">
-                                            <a href="article.php?slug=<?php echo $article['slug']; ?>">
+                                            <a href="article.php?slug=<?php echo $article['id']; ?>">
                                                 <i class="fa-solid fa-arrow-right"></i>
                                             </a>
                                         </div>
@@ -162,6 +162,8 @@ $articles = getArticlesHome($currentPage, 4, $sort);
             }
         });
     </script>
+        <script src="../assets/scripts/script.js"></script>
+
 </body>
 
 </html>
