@@ -2,32 +2,50 @@
 require_once __DIR__ . '/../config/database.php';
 // require_once "../config/database.php";
 
-function getArticlesHome($page = 1, $limit = 6, $sort = 'newset', $id = null)
+function getArticlesHome($page = 1, $limit = 6, $sort = 'newset', $id = null, $search = null)
 {
     $db = new Database();
     $conn = $db->getconnection();
+    
+    // Determine sort direction
     $direction = ($sort === 'oldest') ? 'ASC' : 'DESC';
     $offset = ($page - 1) * $limit;
 
+    // Base query with joins
     $query = "SELECT a.*, c.name as category_name, u.username as author_name 
               FROM articles a 
               LEFT JOIN categories c ON a.category_id = c.id 
               LEFT JOIN users u ON a.author_id = u.id 
               WHERE a.status = 'published'";
 
+    // Filter by author if ID is provided
     if ($id !== null) {
         $query .= " AND a.author_id = :id ";
     }
 
+    // NEW: Search filter for title, content, or excerpt
+    if ($search !== null && $search !== '') {
+        $query .= " AND (a.title LIKE :search OR u.username LIKE :search OR a.content LIKE :search OR a.excerpt LIKE :search) ";
+    }
+
+    // Sorting and Pagination
     $query .= " ORDER BY a.created_at $direction LIMIT :limit OFFSET :offset";
 
     $stmt = $conn->prepare($query);
 
+    // Bind basic parameters
     $stmt->bindValue(':limit', (int) $limit, PDO::PARAM_INT);
     $stmt->bindValue(':offset', (int) $offset, PDO::PARAM_INT);
 
+    // Bind author ID if exists
     if ($id !== null) {
         $stmt->bindValue(':id', (int) $id, PDO::PARAM_INT);
+    }
+
+    // Bind search term with wildcards if exists
+    if ($search !== null && $search !== '') {
+        $searchTerm = "%$search%";
+        $stmt->bindValue(':search', $searchTerm, PDO::PARAM_STR);
     }
 
     $stmt->execute();
