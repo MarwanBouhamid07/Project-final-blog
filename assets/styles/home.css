@@ -325,11 +325,17 @@ article{
     padding-left: 20px;
     /* transition: 0.4s; */
 }
-.search-widget span{
+.search-widget button{
     position: relative;
     top: -37px;
+    border: none;
+    background-color: none;
+    background-color: var(--color-bg-main);
+    outline: none;
+    font-size: 16px;
     left: 87%;
     transition: 0.3;
+    cursor: pointer;
     color: var(--color-slate-400);
 }
 .search-widget input:focus{
@@ -339,7 +345,7 @@ article{
 .search-widget h3 i{
     font-weight: bold;
 }
-.search-widget span:hover{
+.search-widget button:hover{
     color: var(--color-primary-700);
 }
 .search-widget h3 i{
