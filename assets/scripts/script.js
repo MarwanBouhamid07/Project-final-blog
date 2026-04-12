@@ -9,3 +9,4 @@ const adminpage = document.getElementById("admin-page");
 adminpage.onclick = function(){
     window.open("admin/dashboard.php","_self");
 }
+
