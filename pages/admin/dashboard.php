@@ -37,7 +37,7 @@ $total_active_articles = TotalActivearticles($id);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="../../assets/styles/sidebare.css">
     <link rel="stylesheet" href="../../assets/styles/dashboard.css">
     <script src="https://kit.fontawesome.com/8f8b4a4f39.js" crossorigin="anonymous"></script>
@@ -52,7 +52,7 @@ $total_active_articles = TotalActivearticles($id);
                 <h2>Dashboard Overview</h3>
                     <p>Manage your blog content and monitor performance metrics.</p>
             </div>
-            <button class="add-post"><i class="fa-solid fa-plus"></i> New Post</button>
+            <button id="new-post" class="add-post"><i class="fa-solid fa-plus"></i> New Post</button>
         </header>
         <div class="stats-container">
             <div class="stat-card">
@@ -159,6 +159,14 @@ $total_active_articles = TotalActivearticles($id);
     </div>
     </section>
     </main>
+
+    <script>
+        const newPost = document.getElementById('new-post');
+
+        newPost.onclick= function (){
+            window.open("create_articles.php","_self");
+        }
+    </script>
 </body>
 
 </html>
