@@ -46,7 +46,7 @@ $todayPost = todayPost();
                 </div>
 
                 <div class="image-side">
-                    <img src="../assets/uploads/firstarticle.avif" alt="Developer working">
+                    <img src="<?php echo htmlspecialchars($todayPost['featured_image_url']); ?>" alt="<?php echo htmlspecialchars($todayPost['title']); ?>">
                 </div>
             </article>
         </section>
