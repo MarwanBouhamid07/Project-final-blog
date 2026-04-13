@@ -1,3 +1,33 @@
+// 1. Define the data for different periods (English comments as requested)
+const chartData = {
+    'this-month': {
+        labels: ['1 Mar', '10 Mar', '20 Mar', '30 Mar'],
+        data: [400, 1200, 2400, 3200]
+    },
+    'last-month': {
+        labels: ['1 Feb', '10 Feb', '20 Feb', '28 Feb'],
+        data: [800, 1500, 1100, 1900]
+    },
+    'this-year': {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+        data: [5000, 7000, 4500, 8500, 9000, 12000]
+    }
+};
+
+
+
+// 3. Add Event Listener to the select dropdown
+document.getElementById('timeFilter').addEventListener('change', function() {
+    const selectedValue = this.value; // Get the value (this-month, etc.)
+    
+    // Update labels and data based on selection
+    myChart.data.labels = chartData[selectedValue].labels;
+    myChart.data.datasets[0].data = chartData[selectedValue].data;
+    
+    // Refresh the chart with a smooth animation
+    myChart.update();
+});
+
 // Get the context of the canvas element
 const ctx = document.getElementById('pageViewsChart').getContext('2d');
 
@@ -9,10 +39,10 @@ gradient.addColorStop(1, 'rgba(59, 130, 246, 0.0)'); // Transparent at bottom
 const myChart = new Chart(ctx, {
     type: 'line',
     data: {
-        labels: ['1 Mar', '5 Mar', '10 Mar', '15 Mar', '20 Mar', '25 Mar', '30 Mar'], // X-axis
+        labels: chartData['this-month'].labels, // X-axis
         datasets: [{
             label: 'Page Views',
-            data: [400, 800, 1200, 1600, 2400, 2100, 3400], // Y-axis data
+            data: chartData['this-month'].data, // Y-axis data
             borderColor: '#3b82f6', // Line color (Blue)
             borderWidth: 3,
             fill: true, // Enable the area fill
@@ -37,4 +67,15 @@ const myChart = new Chart(ctx, {
             }
         }
     }
+});
+
+document.getElementById('timeFilter').addEventListener('change', function() {
+    const selectedValue = this.value; // Get the value (this-month, etc.)
+    
+    // Update labels and data based on selection
+    myChart.data.labels = chartData[selectedValue].labels;
+    myChart.data.datasets[0].data = chartData[selectedValue].data;
+    
+    // Refresh the chart with a smooth animation
+    myChart.update();
 });
