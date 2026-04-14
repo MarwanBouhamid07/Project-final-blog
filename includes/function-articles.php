@@ -6,7 +6,7 @@ function getArticlesHome($page = 1, $limit = 6, $sort = 'newset', $id = null, $s
 {
     $db = new Database();
     $conn = $db->getconnection();
-    
+
     // Determine sort direction
     $direction = ($sort === 'oldest') ? 'ASC' : 'DESC';
     $offset = ($page - 1) * $limit;
@@ -67,6 +67,8 @@ function categoriesCount()
     return $categories;
 }
 
+
+//read the last article posting in the blog
 function todayPost()
 {
     $db = new Database();
@@ -81,7 +83,9 @@ function todayPost()
     $stmt = $conn->query($query);
     $latest_article = $stmt->fetch(PDO::FETCH_ASSOC);
     return $latest_article;
+
 }
+//function of check in the login 
 function check_login()
 {
     if (!isset($_SESSION['user_id'])) {
@@ -89,7 +93,7 @@ function check_login()
         exit();
     }
 }
-
+//funtion of delete articles
 function delete_article($id)
 {
     $db = new Database();
@@ -99,6 +103,8 @@ function delete_article($id)
     $stmt = $conn->prepare($sql);
     $stmt->execute(['id' => $id]);
 }
+
+//count all comments of the user 
 function countComents($author_id)
 {
     $db = new Database();
@@ -117,6 +123,8 @@ function countComents($author_id)
 
     return $result['total_comments'] ?? 0;
 }
+
+//get the total veiws of the user
 function Totalveiws($author_id)
 {
     $db = new Database();
@@ -133,6 +141,8 @@ function Totalveiws($author_id)
 
     return $result['total_views'] ?? 0;
 }
+
+//count the total public araticles in the blog of the user
 function TotalActiveArticles($author_id)
 {
     $db = new Database();
