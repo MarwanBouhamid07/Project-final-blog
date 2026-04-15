@@ -11,7 +11,7 @@ session_start();
             <nav>
                 <a href="home.php">Home</a>
                 <a href="articles.php">Article</a>
-                <a href="">About us</a>
+                <a href="about.php">About us</a>
             </nav>
         </div>
         <div class="buttons-header">
