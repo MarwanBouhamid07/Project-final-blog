@@ -42,7 +42,7 @@ $todayPost = todayPost();
                         <span class="poinot"></span>
                         <div class="author"><i class="fa-regular fa-user"></i> <?php echo htmlspecialchars($todayPost['author_name']); ?></div>
                     </div>
-                    <button class="read-article">Read Article <i class="fa-solid fa-arrow-right"></i></button>
+                    <button class="read-article" onclick="window.location.href='detail.php?id=<?php echo $todayPost['id']; ?>'">Read Article <i class="fa-solid fa-arrow-right"></i></button>
                 </div>
 
                 <div class="image-side">
@@ -61,7 +61,7 @@ $todayPost = todayPost();
                         <p>No articles found.</p>
                     <?php else: ?>
                         <?php foreach ($articles as $article): ?>
-                            <article class="post-card">
+                            <article class="post-card" onclick="window.location.href='detail.php?id=<?php echo $article['id']; ?>'">
                                 <div class="post-image">
                                     <span class="badge"><?php echo htmlspecialchars($article['category_name'] ?? 'General'); ?></span>
                                     <img src="<?php echo htmlspecialchars($article['featured_image_url']); ?>" alt="<?php echo htmlspecialchars($article['title']); ?>">
@@ -78,7 +78,7 @@ $todayPost = todayPost();
                                             <span><?php echo htmlspecialchars($article['author_name']); ?></span>
                                         </div>
                                         <div class="icon-left">
-                                            <a href="article.php?slug=<?php echo $article['id']; ?>">
+                                            <a href="detail.php?id=<?php echo $article['id']; ?>">
                                                 <i class="fa-solid fa-arrow-right"></i>
                                             </a>
                                         </div>

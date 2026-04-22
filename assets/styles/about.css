@@ -50,6 +50,14 @@ body {
     scroll-behavior: smooth; 
     min-height: 100vh; 
     background-color: var(--color-bg-main);
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+  margin-top: 100px;
 }
 
 main{

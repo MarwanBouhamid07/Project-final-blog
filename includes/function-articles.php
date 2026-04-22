@@ -160,3 +160,17 @@ function TotalActiveArticles($author_id)
 
     return $result['total_active_articles'] ?? 0;
 }
+
+
+//get article by id 
+
+
+function getartilceforDetail($id){
+    $db = new Database();
+    $conn = $db->getconnection();
+    $query = 'SELECT * FROM articles WHERE id =:id';
+    $stmt = $conn->prepare($query);
+    $stmt->execute([':id'=> $id]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result;
+}

@@ -74,32 +74,12 @@
                 <h2 class="title">Meet Our Team</h2>
                 <div class="team-grid">
                     <div class="member-card">
-                        <div class="avatar">SJ</div>
-                        <h3>Sarah Johnson</h3>
+                        <div class="avatar">MB</div>
+                        <h3>Marwan Bouhamid</h3>
                         <p class="role">Founder & Editor-in-Chief</p>
                         <p class="desc">10+ years in tech journalism with a passion for frontend development.</p>
                     </div>
 
-                    <div class="member-card">
-                        <div class="avatar">MC</div>
-                        <h3>Michael Chen</h3>
-                        <p class="role">Lead Technical Writer</p>
-                        <p class="desc">Full-stack developer sharing insights on modern web architectures.</p>
-                    </div>
-
-                    <div class="member-card">
-                        <div class="avatar">ER</div>
-                        <h3>Emma Rodriguez</h3>
-                        <p class="role">UI/UX Specialist</p>
-                        <p class="desc">Design advocate helping developers create beautiful, accessible interfaces.</p>
-                    </div>
-
-                    <div class="member-card">
-                        <div class="avatar">DK</div>
-                        <h3>David Kim</h3>
-                        <p class="role">DevOps Contributor</p>
-                        <p class="desc">Cloud infrastructure expert demystifying deployment and scaling strategies.</p>
-                    </div>
                 </div>
             </section>
 
