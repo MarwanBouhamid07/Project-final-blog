@@ -88,21 +88,22 @@ $result = getartilceforDetail($id);
             <h2>Leave a Comment</h2>
             <p class="form-note">Your email address will not be published. Required fields are marked *</p>
 
-            <form class="comment-form">
+            <form action="../actions/comments.php" method="POST" class="comment-form">
+                <input type="hidden" name="article_id" value="<?php echo $result["id"]; ?>">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="name">Name *</label>
-                        <input type="text" id="name" placeholder="John Doe" required>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email *</label>
-                        <input type="email" id="email" placeholder="john@example.com" required>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="message">Message *</label>
-                    <textarea id="message" rows="5" placeholder="Share your thoughts..." required></textarea>
+                    <textarea id="message" name="message" rows="5" placeholder="Share your thoughts..." required></textarea>
                 </div>
 
                 <button type="submit" class="post-btn">Post Comment</button>
