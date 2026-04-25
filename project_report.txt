@@ -6,12 +6,16 @@ Project Insight is a PHP-based blog management system designed for publishing an
 ## Project Structure
 ```
 Project-final-blog/
-├── actions/           # PHP action handlers for forms
-├── assets/           # Static assets (CSS, JS, images)
-├── config/           # Database configuration
-├── includes/         # Reusable PHP components
-├── pages/           # Main application pages
-└── uploads/         # User-uploaded images
+├── actions/           # PHP action handlers (e.g., auth-login.php, auth-sigin.php)
+├── assets/            # Static assets
+│   ├── scripts/       # JS files (charts.js, script.js)
+│   ├── styles/        # Component-specific CSS files
+│   └── uploads/       # Assets-related uploads
+├── config/            # Database configuration (database.php)
+├── includes/          # Reusable components (header, sidebar, functions)
+├── pages/             # Application pages
+│   └── admin/         # Admin-only pages (dashboard, statistics)
+└── uploads/           # User-uploaded featured images
 ```
 
 ## Technology Stack
@@ -37,16 +41,16 @@ Project-final-blog/
 - **Image Upload**: Featured images stored in `/uploads/` directory
 
 ### Dashboard & Analytics
-- **Admin Dashboard**: Overview of blog performance
-- **Statistics**: Total views, active posts, and comments per author
-- **Article Management**: List, sort, and delete articles
-- **Pagination**: Supports paginated article listings
+- **Admin Dashboard**: Overview of blog performance with recent articles list
+- **Statistics**: Visual analytics using Chart.js (total views, active posts)
+- **Article Management**: CRUD operations (Create, Read, Update, Delete)
+- **Pagination**: Supports paginated article listings in the dashboard
 
 ### Public Features
 - **Home Page**: Featured latest article + grid of recent articles
 - **Article Archive**: Browse all published articles with sorting
-- **Category Filtering**: Articles grouped by categories
-- **Search Functionality**: UI elements for article search (implementation pending)
+- **Category Filtering**: UI elements present; backend logic for category-specific filtering is pending
+- **Search Functionality**: Backend implemented in `function-articles.php`; UI integrated into dashboard
 
 ## Database Schema
 Based on the application code, the following tables are used:
@@ -88,7 +92,11 @@ Based on the application code, the following tables are used:
 3. **Session Management**: Basic session handling without additional security measures
 
 ## Code Quality Observations
-- **File Naming**: Inconsistent naming (e.g., `funcitons-users.php` has a typo)
+- **File Naming & Typos**: Inconsistent naming and typos in multiple files:
+    - `includes/funcitons-users.php` (functions typo)
+    - `actions/auth-sigin.php` (signin typo)
+    - `includes/sidebareAdmin.php` (sidebar typo)
+    - `pages/articles.php` (title tag typo: "Artilces")
 - **Code Organization**: Good separation of concerns with actions, includes, and pages
 - **Error Handling**: Basic error handling with session-based error messages
 - **Database Queries**: Uses prepared statements (good practice)
@@ -97,7 +105,7 @@ Based on the application code, the following tables are used:
 - **Responsive Design**: CSS indicates mobile-friendly layouts
 - **Component-Based**: Reusable header, footer, and sidebar components
 - **Styling**: Separate CSS files for different sections (header, home, dashboard, etc.)
-- **JavaScript**: Basic image upload preview functionality
+- **JavaScript**: Analytics visualization with Chart.js and basic image upload previews
 
 ## Recommendations for Improvement
 1. **Security Enhancements**:
