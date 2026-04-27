@@ -5,6 +5,14 @@ $id = $_GET["id"];
 
 $result = getartilceforDetail($id);
 
+$comments = getComments($id);
+$totalcomments = countComments($id);
+$totallikes = countLikes($id);
+$hasLiked = false;
+if (isset($_SESSION['user_id'])) {
+    $hasLiked = hasUserLiked($id, $_SESSION['user_id']);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -47,19 +55,18 @@ $result = getartilceforDetail($id);
 
         <div class="interaction-bar">
             <div class="left-actions">
+                <form action="../actions/likes.php" method="POST" style="display: inline;">
+                    <input type="hidden" name="article_id" value="<?php echo $id; ?>">
+                    <input type="hidden" name="user_id" value="<?php echo $_SESSION['user_id'] ?? ''; ?>">
+                    <button type="submit" name="like" class="action-btn like-btn">
+                        <i class="fa-<?php echo $hasLiked ? 'solid' : 'regular'; ?> fa-heart"></i> <?php echo $totallikes ?> Likes
+                    </button>
+                </form>
                 <button class="action-btn">
-                    <i class="fa-regular fa-heart"></i> 124 Likes
-                </button>
-                <button class="action-btn">
-                    <i class="fa-regular fa-comment"></i> 12 Comments
+                    <i class="fa-regular fa-comment"></i> <?php echo $totalcomments ?> Comments
                 </button>
             </div>
 
-            <div class="right-actions">
-                <button class="action-btn share-btn">
-                    <i class="fa-solid fa-share-nodes"></i> Share
-                </button>
-            </div>
         </div>
         <section class="related-section">
             <h2 class="section-title">Related Articles</h2>

@@ -174,3 +174,51 @@ function getartilceforDetail($id){
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
     return $result;
 }
+
+//get comments 
+function countComments($article_id)
+{
+    $db = new Database();
+    $conn = $db->getconnection();
+    $query = 'SELECT COUNT(*) as total_comments FROM comments WHERE article_id =:article_id';
+    $stmt = $conn->prepare($query);
+    $stmt->execute([':article_id'=> $article_id]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result['total_comments'] ?? 0;
+}
+
+//get comments 
+function getComments($article_id)
+{
+    $db = new Database();
+    $conn = $db->getconnection();
+    $query = 'SELECT * FROM comments WHERE article_id =:article_id';
+    $stmt = $conn->prepare($query);
+    $stmt->execute([':article_id'=> $article_id]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result['total_comments'] ?? 0;
+}
+
+//likes function
+function countLikes($article_id)
+{
+    $db = new Database();
+    $conn = $db->getconnection();
+    $query = 'SELECT COUNT(*) as total_likes FROM likes WHERE article_id =:article_id';
+    $stmt = $conn->prepare($query);
+    $stmt->execute([':article_id'=> $article_id]);
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result['total_likes'] ?? 0;
+}
+
+// Check if user liked article
+function hasUserLiked($article_id, $user_id)
+{
+    $db = new Database();
+    $conn = $db->getconnection();
+    $query = 'SELECT COUNT(*) FROM likes WHERE article_id = :article_id AND user_id = :user_id';
+    $stmt = $conn->prepare($query);
+    $stmt->execute([':article_id' => $article_id, ':user_id' => $user_id]);
+    return $stmt->fetchColumn() > 0;
+}
+

@@ -1,6 +1,7 @@
 <?php
 require_once "../config/database.php";
 require_once "../includes/funcitons-users.php";
+session_start();
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -21,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = $stmt->execute([
             ':content'   => $message,
             ':article_id'    => $article_id, 
-            ':user_id'    => $_SESSION["user_id"],
+            ':user_id'    => $_SESSION['user_id'],
             ':created_at'   => $now
         ]);
 
