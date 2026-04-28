@@ -71,7 +71,7 @@ $articles = getArticlesHome($currentPage, 4, $sort);
                         <p>No articles found.</p>
                     <?php else: ?>
                         <?php foreach ($articles as $article): ?>
-                            <article class="post-card">
+                            <article class="post-card"  onclick="window.location.href='detail.php?id=<?php echo $article['id']; ?>'">
                                 <div class="post-image">
                                     <span class="badge"><?php echo htmlspecialchars($article['category_name'] ?? 'General'); ?></span>
                                     <img src="<?php echo htmlspecialchars($article['featured_image_url']); ?>" alt="<?php echo htmlspecialchars($article['title']); ?>">
@@ -88,7 +88,7 @@ $articles = getArticlesHome($currentPage, 4, $sort);
                                             <span><?php echo htmlspecialchars($article['author_name']); ?></span>
                                         </div>
                                         <div class="icon-left">
-                                            <a href="article.php?slug=<?php echo $article['id']; ?>">
+                                            <a href="detail.php?id=<?php echo $article['id']; ?>">
                                                 <i class="fa-solid fa-arrow-right"></i>
                                             </a>
                                         </div>

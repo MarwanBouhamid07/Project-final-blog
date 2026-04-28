@@ -167,8 +167,12 @@ function TotalActiveArticles($author_id)
 
 function getartilceforDetail($id){
     $db = new Database();
-    $conn = $db->getconnection();
-    $query = 'SELECT * FROM articles WHERE id =:id';
+    $conn = $db->getconnection($id);
+    $query = "SELECT a.*, c.name as category_name, u.username as author_name 
+              FROM articles a 
+              LEFT JOIN categories c ON a.category_id = c.id 
+              LEFT JOIN users u ON a.author_id = u.id 
+              WHERE a.status = 'published' AND a.id =:id";
     $stmt = $conn->prepare($query);
     $stmt->execute([':id'=> $id]);
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
